@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Planner tool for College Success Toolkit" />
+  <title>Planner | College Success Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>College Success Toolkit</h1>
+    <p><strong>T.O.R.C.H CHAIR Initiative</strong></p>
+  </header>
+
+  <main>
+    <h2>Planner</h2>
+
+    <form id="planner-form" class="planner-container">
+      <label for="task-title">Task Title</label>
+      <input type="text" id="task-title" name="task-title" required />
+
+      <label for="due-date">Due Date</label>
+      <input type="date" id="due-date" name="due-date" required />
+
+      <button type="submit">Add Task</button>
+    </form>
+
+    <ul id="task-list" class="task-list"></ul>
+  </main>
+
+  <footer>
+    <small>&copy; 2025 Natalie Joy Hawi Odhiambo | NSBE Toolkit Project</small>
+  </footer>
+
+  <script src="planner.js"></script>
+</body>
+</html>

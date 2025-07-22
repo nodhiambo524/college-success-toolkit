@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Success Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>College Success Toolkit</h1>
+  
+  <!-- Navigation -->
+  <nav>
+    <button onclick="showSection('gpa')">GPA Calculator</button>
+    <button onclick="showSection('planner')">Planner</button>
+    <button onclick="showSection('budget')">Budgeting Tool</button>
+  </nav>
+
+  <!-- GPA Calculator -->
+  <section id="gpa" class="tool-section">
+    <h2>GPA Calculator</h2>
+    <form id="gpa-form">
+      <label>Grade (A=4, B=3, etc):</label>
+      <input type="number" id="grade" min="0" max="4" step="0.1" />
+      <label>Credits:</label>
+      <input type="number" id="credits" />
+      <button type="button" onclick="addCourse()">Add Course</button>
+    </form>
+    <ul id="course-list"></ul>
+    <h3>Your GPA: <span id="gpa-result">0.00</span></h3>
+  </section>
+
+  <!-- Planner -->
+  <section id="planner" class="tool-section">
+  <h2>Planner</h2>
+  <form id="planner-form">
+    <input type="text" id="task-input" placeholder="Enter task" required />
+    <input type="date" id="due-date-input" required />
+    <button type="submit">Add Task</button>
+  </form>
+  <ul id="task-list"></ul>
+</section>
+
+
+  <!-- Budgeting Tool -->
+  <section id="budget" class="tool-section">
+  <h2>Budgeting Tool</h2>
+  <form id="budget-form">
+    <input type="text" id="budget-description" placeholder="Description" required />
+    <input type="number" id="budget-amount" placeholder="Amount" required />
+    <select id="budget-type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+    <button type="submit">Add</button>
+  </form>
+  <div id="budget-summary">
+    <p>Total Income: $<span id="total-income">0</span></p>
+    <p>Total Expenses: $<span id="total-expenses">0</span></p>
+    <p>Balance: $<span id="balance">0</span></p>
+  </div>
+  <ul id="budget-list"></ul>
+</section>
+<!-- Selfcare Checklist -->
+ <section id="selfcare-checklist" class="tool-section">
+ <h2>Selfcare Checklist</h2>
+ <ul id="checklist">
+  <li><label><input type="checkbox"> Drank enough water 💧</label></li>
+    <li><label><input type="checkbox"> Slept at least 7 hours 😴</label></li>
+    <li><label><input type="checkbox"> Took a walk or moved 🏃‍♂️</label></li>
+    <li><label><input type="checkbox"> Took breaks during study time ⏸️</label></li>
+    <li><label><input type="checkbox"> Ate healthy meals 🥗</label></li>
+    <li><label><input type="checkbox"> Practiced mindfulness or prayer 🙏</label></li>
+ </ul>
+ <button onclick="resetChecklist()">Reset checklist</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
