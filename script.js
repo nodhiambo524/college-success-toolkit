@@ -5,6 +5,11 @@ function showSection(id) {
   document.getElementById(id).style.display = 'block';
 }
 
+// Show default section on load
+document.addEventListener('DOMContentLoaded', () => {
+  showSection('gpa');
+});
+
 // GPA Calculator Logic
 let totalPoints = 0;
 let totalCredits = 0;
@@ -27,18 +32,25 @@ function addCourse() {
 
   const gpa = totalPoints / totalCredits;
   document.getElementById("gpa-result").textContent = gpa.toFixed(2);
+
+  // Reset inputs
+  document.getElementById('grade').value = '';
+  document.getElementById('credits').value = '';
 }
 
 // Planner Logic
-
-// ---------------- Planner ----------------
 document.getElementById("planner-form").addEventListener("submit", function (e) {
   e.preventDefault();
   const task = document.getElementById("task-input").value;
   const dueDate = document.getElementById("due-date-input").value;
 
+  if (!task || !dueDate) {
+    alert('Please enter both a task and a due date.');
+    return;
+  }
+
   const li = document.createElement("li");
-  li.textContent = `${task} (Due: ${dueDate})`;
+  li.textContent = `${task} (Due: ${dueDate}) `;
 
   const doneBtn = document.createElement("button");
   doneBtn.textContent = "Done";
@@ -61,7 +73,7 @@ document.getElementById("planner-form").addEventListener("submit", function (e) 
   document.getElementById("planner-form").reset();
 });
 
-// ---------------- Budgeting Tool ----------------
+// Budgeting Tool
 let income = 0;
 let expenses = 0;
 
@@ -71,9 +83,13 @@ document.getElementById("budget-form").addEventListener("submit", function (e) {
   const amount = parseFloat(document.getElementById("budget-amount").value);
   const type = document.getElementById("budget-type").value;
 
-  const li = document.createElement("li");
-  li.textContent = `${type === "income" ? "+" : "-"} $${amount} - ${description}`;
+  if (!description || isNaN(amount)) {
+    alert('Enter valid description and amount.');
+    return;
+  }
 
+  const li = document.createElement("li");
+  li.textContent = `${type === "income" ? "+" : "-"} $${amount.toFixed(2)} - ${description}`;
   document.getElementById("budget-list").appendChild(li);
 
   if (type === "income") {
@@ -88,9 +104,10 @@ document.getElementById("budget-form").addEventListener("submit", function (e) {
 
   document.getElementById("budget-form").reset();
 });
-<script>
-  function resetChecklist() {
-    const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
-    checkboxes.forEach(box => box.checked = false);
-  }
-</script>
+
+// Self-Care Checklist Reset
+function resetChecklist() {
+  const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
+  checkboxes.forEach(box => box.checked = false);
+}
+
