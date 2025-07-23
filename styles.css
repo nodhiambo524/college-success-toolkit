@@ -1,64 +1,42 @@
+/* Global Styling */
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+}
+
+/* Navigation Buttons */
+nav button {
+  margin: 5px;
+  padding: 8px 15px;
+  background-color: #008000; /* Green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background-color: #006400; /* Dark green on hover */
+}
+
+/* Tool Sections */
 .tool-section {
-  display: none;
+  margin: 2rem 0;
   padding: 1rem;
-  border: 1px solid #ccc;
-  margin-top: 1rem;
-  background-color: #f9f9f9;
+  border-top: 1px solid #ccc;
+  background-color: #111; /* Dark background for sections */
+  border-radius: 10px;
 }
 
 .tool-section.active {
   display: block;
 }
 
-nav button {
-  margin: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-}
-#budget form {
-  margin-bottom: 1rem;
-}
-
-#budget input {
-  margin-bottom: 0.5rem;
-  width: 200px;
-}
-
-#expense-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-#expense-list li {
-  padding: 4px;
-  background-color: #f0f0f0;
-  margin-bottom: 5px;
-}
-body {
-  font-family: sans-serif;
-  margin: 20px;
-}
-
-nav button {
-  margin: 5px;
-  padding: 8px 15px;
-}
-
-.tool-section {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-}
-
-input, button {
-  margin-top: 5px;
-}
-.tool-section {
-  margin: 2rem 0;
-  padding: 1rem;
-  border-top: 1px solid #ccc;
-}
-
+/* Forms and Inputs */
 .tool-section form {
   display: flex;
   gap: 0.5rem;
@@ -71,28 +49,48 @@ input, button {
 .tool-section button {
   padding: 0.5rem;
   font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #008000; /* Green border */
+  background-color: #fff; /* White input background */
+  color: #000; /* Black text */
 }
 
-#task-list li, #budget-list li {
+.tool-section button {
+  background-color: #008000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tool-section button:hover {
+  background-color: #006400;
+}
+
+/* Lists */
+#task-list li, #budget-list li, #expense-list li {
   margin: 0.5rem 0;
+  padding: 10px;
+  background-color: #008000; /* Green background */
+  color: white;
+  border-radius: 8px;
 }
 
-button {
-  margin-left: 0.5rem;
-}
+/* Self-Care Checklist */
 #self-care-checklist {
-  background-color: #f0f9ff;
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
   padding: 20px;
   margin: 20px auto;
   border-radius: 12px;
   max-width: 400px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #self-care-checklist h2 {
   margin-bottom: 15px;
   font-size: 1.5rem;
-  color: #0077b6;
+  color: #008000; /* Green heading */
 }
 
 #checklist {
@@ -109,13 +107,14 @@ button {
   margin-top: 15px;
   padding: 8px 12px;
   border: none;
-  background-color: #0077b6;
+  background-color: #008000;
   color: white;
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
+  transition: 0.3s;
 }
 
 #self-care-checklist button:hover {
-  background-color: #005f87;
+  background-color: #006400;
 }
