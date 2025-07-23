@@ -1,11 +1,10 @@
-// Show/Hide sections
+// script.js
 function showSection(id) {
   const sections = document.querySelectorAll('.tool-section');
   sections.forEach(section => section.style.display = 'none');
   document.getElementById(id).style.display = 'block';
 }
 
-// Show default section on load
 document.addEventListener('DOMContentLoaded', () => {
   showSection('gpa');
 });
